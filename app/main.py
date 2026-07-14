@@ -1,0 +1,105 @@
+from typing import Optional
+from random import randrange 
+from fastapi import FastAPI, Response, status, HTTPException
+from fastapi.params import Body
+from psycopg import Cursor
+from pydantic import BaseModel
+from .database import engine    
+from .model import Base
+import psycopg2
+from psycopg2.extras import RealDictCursor 
+import time
+
+#code to set up database
+while True:
+
+    try:
+    # Connect to your postgres DB
+        conn = psycopg2.connect(dbname="firstfastapiproject", 
+                                user="postgres",
+                                password= "Ajike2007", 
+                                host="localhost")
+    # Open a cursor to perform database operations
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+        print("Database connection was successful")
+        break
+    except Exception as error:
+        print("Connecting to database failed")
+        print("Error: ", error)
+        time.sleep(2)
+
+
+app = FastAPI()
+
+class Post(BaseModel):
+    title: str
+    content: str
+    published: bool = True
+    rating: Optional[int] = None
+
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},{"title": "favourite foods", "content": "I like pizza", "id": 2}]
+
+def find_post(id):
+    for p in my_posts:
+        if p["id"] == id:
+            return p
+        
+def find_index_post(id):
+    for i,p in enumerate(my_posts):
+        if p["id"] == id:
+            return i
+
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
+
+@app.get("/posts")
+def get_post():
+    cur.execute("SELECT * FROM posts")
+    posts = cur.fetchall()
+    return {"data": posts}
+
+@app.post("/posts", status_code=status.HTTP_201_CREATED)
+def creaateposts(post: Post):
+    post_dict = post.model_dump()
+    post_dict["id"] = randrange(0,10000)
+    my_posts.append(post_dict)
+    return{"data": my_posts } 
+
+@app.get("/posts/{id}")
+def get_post(id:int, response: Response):
+    print(id)
+    post = find_post(id)
+    if not post:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, 
+                            detail=f"post with id: {id} was not found")
+       # response.status_code = status.HTTP_404_NOT_FOUND
+       # return{"message": f"post with id: {id} was not found"}
+    return{"post detail": post}
+
+
+@app.delete("/posts/{id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_post(id: int):
+    #find index in array with ID
+    index = find_index_post(id)
+    if index == None:
+        raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail=f"post with {id} does not exist")
+    
+    my_posts.pop(index)
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+@app.put("/posts/{id}")
+def update_post(id: int, post:Post):
+    index = find_index_post(id)
+    if index == None:
+        raise HTTPException(status_code = status.HTTP_404_NOT_FOUND, detail=f"post with {id} does not exist")
+    post_dict = post.model_dump()
+    post_dict["id"] = id
+    my_posts[index] = post_dict
+    return {"data": post_dict}
+
+
+
+
+
+

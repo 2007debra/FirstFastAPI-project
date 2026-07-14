@@ -1,31 +1,31 @@
-FastAPI Post Management API 🚀\
+FastAPI Post Management API 🚀<br>
 
-A backend API project built with FastAPI and PostgreSQL to learn more about backend development, databases, and building real-world applications.\
+A backend API project built with FastAPI and PostgreSQL to learn more about backend development, databases, and building real-world applications.<br>
 
-📌 About This Project\
+📌 About This Project<br>
 
-This project is an ongoing CRUD (Create, Read, Update, Delete) API where users can create, view, update, and delete posts. I built this project to get more hands-on experience with backend development and understand how applications communicate with databases.\
+This project is an ongoing CRUD (Create, Read, Update, Delete) API where users can create, view, update, and delete posts. I built this project to get more hands-on experience with backend development and understand how applications communicate with databases.<br>
 
-Through this project, I am learning how to build APIs, work with database models, validate user data, and structure a backend application.\
+Through this project, I am learning how to build APIs, work with database models, validate user data, and structure a backend application.<br>
 
-🛠️ Technologies Used\
-Python\
-FastAPI - Used to build the API\
-PostgreSQL - Used for database management\
-SQLAlchemy - Used to create and manage database models\
-Pydantic - Used for data validation\
-Uvicorn - Used to run the FastAPI application\
-psycopg2 - Used to connect Python with PostgreSQL\
-✨ Current Features\
-✅ Create new posts\
-✅ View all posts\
-✅ View a specific post by ID\
-✅ Update posts\
-✅ Delete posts\
-✅ Validate incoming data using Pydantic models\
+🛠️ Technologies Used<br>
+Python<br>
+FastAPI - Used to build the API <br>
+PostgreSQL - Used for database management <br>
+SQLAlchemy - Used to create and manage database models <br>
+Pydantic - Used for data validation <br>
+Uvicorn - Used to run the FastAPI application <br>
+psycopg2 - Used to connect Python with PostgreSQL <br>
+✨ Current Features <br>
+✅ Create new posts <br>
+✅ View all posts <br>
+✅ View a specific post by ID <br>
+✅ Update posts<br>
+✅ Delete posts <br>
+✅ Validate incoming data using Pydantic models <br>
 
-🚧 Improving database integration and project structure\
-🏗️ Project Structure\
+🚧 Improving database integration and project structure <br>
+🏗️ Project Structure<br>
 firstfastapiproject/\
 
 ├── app/\

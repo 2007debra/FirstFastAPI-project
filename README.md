@@ -8,14 +8,15 @@ This project is an ongoing CRUD (Create, Read, Update, Delete) API where users c
 
 Through this project, I am learning how to build APIs, work with database models, validate user data, and structure a backend application.<br>
 
-🛠️ Technologies Used<br>
-Python<br>
-FastAPI - Used to build the API <br>
-PostgreSQL - Used for database management <br>
-SQLAlchemy - Used to create and manage database models <br>
-Pydantic - Used for data validation <br>
-Uvicorn - Used to run the FastAPI application <br>
-psycopg2 - Used to connect Python with PostgreSQL <br>
+🛠️ Technologies Used:<br>
+- Python<br>
+- FastAPI - Used to build the API <br>
+- PostgreSQL - Used for database management <br>
+- SQLAlchemy - Used to create and manage database models <br>
+- Pydantic - Used for data validation <br>
+- Uvicorn - Used to run the FastAPI application <br>
+- psycopg2 - Used to connect Python with PostgreSQL <br>
+
 ✨ Current Features <br>
 ✅ Create new posts <br>
 ✅ View all posts <br>
@@ -39,36 +40,34 @@ firstfastapiproject/<br>
 I am currently following the Python API Development Course: Part 1 by Sanjeev Thiyagarajan on YouTube while building this project.<br>
 
 The course has helped me understand:<br>
+- How to create REST APIs using FastAPI<br>
+- How HTTP methods work (GET, POST, PUT, DELETE)<br>
+- How to connect a backend application to PostgreSQL<br>
+- How to use SQLAlchemy for database models<br>
+- How to organize a backend project<br>
 
-How to create REST APIs using FastAPI<br>
-How HTTP methods work (GET, POST, PUT, DELETE)<br>
-How to connect a backend application to PostgreSQL<br>
-How to use SQLAlchemy for database models<br>
-How to organize a backend project<br>
-
-While following the course, I am also making changes, testing different approaches, and adding my own improvements to strengthen my understanding of backend development.<br>
+While following the course, I am also making changes and adding my own improvements to strengthen my understanding of backend development.<br>
 
 💻 Skills I Am Practicing<br>
 
 This project is helping me improve my skills in:<br>
+- Backend development with Python<br>
+- REST API design<br>
+- CRUD operations<br>
+- Database integration<br>
+- SQLAlchemy ORM<br>
+- Debugging and troubleshooting<br>
+- Building and organizing backend applications<br>
 
-Backend development with Python<br>
-REST API design<br>
-CRUD operations<br>
-Database integration<br>
-SQLAlchemy ORM<br>
-Debugging and troubleshooting<br>
-Building and organizing backend applications<br>
 🔮 Future Improvements<br>
 
 As I continue developing this project, I plan to add:<br>
-
-User authentication and authorization<br>
-JWT authentication<br>
-Database migrations using Alembic<br>
-Better project organization with routers and services<br>
-Automated testing with Pytest<br>
-Deployment to a cloud platform<br>
+- User authentication and authorization<br>
+- JWT authentication<br>
+- Database migrations using Alembic<br>
+- Better project organization with routers and services<br>
+- Automated testing with Pytest<br>
+- Deployment to a cloud platform<br>
 
 🚧 Project Status: Currently in progress<br>
 
